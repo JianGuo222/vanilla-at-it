@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <title>At.js</title>
+
+    <style type="text/css">
+      #smart-tag-dropdown {
+        width: 100%;
+        position: relative;
+      }
+      .atwho-view {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        background: white;
+        color: black;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        min-width: 120px;
+        width: 100%;
+        z-index: 11110 !important;
+      }
+
+      .atwho-view .atwho-header {
+        padding: 5px;
+        margin: 5px;
+        cursor: pointer;
+        border-bottom: solid 1px #eaeff1;
+        color: #6f8092;
+        font-size: 11px;
+        font-weight: bold;
+      }
+
+      .atwho-view .atwho-header .small {
+        color: #6f8092;
+        float: right;
+        padding-top: 2px;
+        margin-right: -5px;
+        font-size: 12px;
+        font-weight: normal;
+      }
+
+      .atwho-view .atwho-header:hover {
+        cursor: default;
+      }
+
+      .atwho-view .cur {
+        background: #3366ff;
+        color: white;
+      }
+      .atwho-view .cur small {
+        color: white;
+      }
+      .atwho-view strong {
+        color: #3366ff;
+      }
+      .atwho-view .cur strong {
+        color: white;
+        font: bold;
+      }
+      .atwho-view ul {
+        /* width: 100px; */
+        list-style: none;
+        padding: 0;
+        margin: auto;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+      .atwho-view ul li {
+        display: block;
+        padding: 5px 10px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+        /* border-top: 1px solid #C8C8C8; */
+      }
+      .atwho-view small {
+        font-size: smaller;
+        color: #777;
+        font-weight: normal;
+      }
+
+      html,
+      body {
+        background: #f9f9f9;
+        padding: 0;
+        margin: 0;
+        font: 14px/1.6 "Lucida Grande", "Helvetica", sans-serif;
+        color: #333;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "PT Sans", sans-serif;
+        line-height: 40px;
+        color: inherit;
+        font-weight: bold;
+        margin: 10px 0;
+        text-rendering: optimizelegibility;
+      }
+      h2,
+      h3 {
+        color: gray;
+      }
+      strong {
+        color: #424242;
+      }
+
+      a {
+        color: #4183c4;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .wrapper {
+        width: 750px;
+        margin: 0 auto;
+      }
+      header {
+        margin-top: 30px;
+      }
+
+      .inputor {
+        height: 160px;
+        width: 100%;
+        border: 1px solid #dadada;
+        border-radius: 4px;
+        padding: 5px 8px;
+        outline: 0 none;
+        margin: 0;
+        background: white;
+        font-size: inherit;
+        overflow-y: scroll;
+      }
+      .inputor:focus {
+        border: 1px solid rgb(6, 150, 247);
+      }
+
+      footer {
+        margin: 30px 0;
+      }
+
+      /*override atwho's style*/
+      .atwho-inserted {
+        color: #4183c4;
+      }
+      .atwho-query {
+        color: #4183c4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container wrapper">
+      <header><h3>Type `@@` to autocomplete tags</h3></header>
+      <div id="main">
+        <!--
+          <div id="editable" class="inputor" contenteditable="true"></div>
+        -->
+        <textarea id="inputor" class="inputor"></textarea>
+        <div id="smart-tag-dropdown"></div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./caret.js"></script>
+    <script type="text/javascript" src="./jquery.atwho.js"></script>
+    <script type="text/javascript">
+      var tags = [
+        "Jacob",
+        "Isabella",
+        "Ethan",
+        "Emma",
+        "Michael",
+        "Olivia",
+        "Alexander",
+        "Sophia",
+        "William",
+        "Ava",
+        "Joshua",
+        "Emily",
+        "Daniel",
+        "Madison",
+        "Jayden",
+        "Abigail",
+        "Noah",
+        "Chloe"
+      ];
+      smartTag("#inputor", {
+        at: "@@",
+        data: tags,
+        limit: 200,
+        suffix: "@@"
+      });
+    </script>
+  </body>
+</html>
