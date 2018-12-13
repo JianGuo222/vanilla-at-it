@@ -305,7 +305,7 @@ var smartTag = (function() {
         (function(_this) {
           return function() {
             var lastScrollTop;
-            lastScrollTop = _this.$inputor.scrollTop();
+            lastScrollTop = _this.$inputor.scrollTop;
             return function(e) {
               var currentScrollTop, ref;
               currentScrollTop = e.target.scrollTop;
